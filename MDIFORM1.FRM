@@ -5,11 +5,11 @@ Begin MDIForm FRM_MDI
    ClientLeft      =   1320
    ClientTop       =   1950
    ClientWidth     =   6045
-   Height          =   7170
+   Height          =   7050
    Icon            =   MDIFORM1.FRX:0000
    Left            =   1260
    LinkTopic       =   "MDIForm1"
-   Top             =   1200
+   Top             =   1320
    Width           =   6165
    WindowState     =   2  'Maximized
    Begin SSPanel Panel3D1 
@@ -26,6 +26,7 @@ Begin MDIForm FRM_MDI
       End
       Begin SSCommand cs 
          BevelWidth      =   1
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000080&
          Height          =   500
          Index           =   7
@@ -38,6 +39,8 @@ Begin MDIForm FRM_MDI
       End
       Begin SSCommand cs 
          BevelWidth      =   1
+         Font3D          =   3  'Inset w/light shading
+         ForeColor       =   &H00000080&
          Height          =   500
          Index           =   6
          Left            =   7650
@@ -95,6 +98,7 @@ Begin MDIForm FRM_MDI
       Begin SSCommand cs 
          AutoSize        =   1  'Adjust Picture Size To Button
          BevelWidth      =   1
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000080&
          Height          =   500
          Index           =   0
@@ -108,6 +112,7 @@ Begin MDIForm FRM_MDI
       Begin SSCommand cs 
          AutoSize        =   1  'Adjust Picture Size To Button
          BevelWidth      =   1
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000080&
          Height          =   500
          Index           =   2
@@ -121,6 +126,7 @@ Begin MDIForm FRM_MDI
       Begin SSCommand cs 
          AutoSize        =   1  'Adjust Picture Size To Button
          BevelWidth      =   1
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000080&
          Height          =   500
          Index           =   1
@@ -133,6 +139,7 @@ Begin MDIForm FRM_MDI
       End
       Begin SSCommand cs 
          BevelWidth      =   1
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000080&
          Height          =   500
          Index           =   5
@@ -146,6 +153,7 @@ Begin MDIForm FRM_MDI
       Begin SSCommand cs 
          AutoSize        =   1  'Adjust Picture Size To Button
          BevelWidth      =   1
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000080&
          Height          =   500
          Index           =   4
@@ -158,6 +166,7 @@ Begin MDIForm FRM_MDI
       End
       Begin SSCommand cs 
          AutoSize        =   2  'Adjust Button Size To Picture
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000080&
          Height          =   600
          Index           =   3
@@ -300,8 +309,8 @@ Dim frmjmj As New uni_ed
 Dim frmkira As New knjiga
 Dim frmkura As New knjiga
 
-Sub cs_Click (index As Integer)
-Select Case index
+Sub cs_Click (Index As Integer)
+Select Case Index
 Case 0:
    Unload frm_mdi
 Case 1: mnu_1_Click
@@ -325,9 +334,9 @@ ukljuciCalc:
    Exit Sub
 End Sub
 
-Sub cs_MouseMove (index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Sub cs_MouseMove (Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim s$
-Select Case index
+Select Case Index
 Case 0: s = "Izlaz iz programa"
 Case 1: s = "Izlazni raèuni - novi"
 Case 2: s = "Izlazni raèuni - izvodi"
@@ -337,12 +346,12 @@ Case 5: s = "Partneri"
 Case 6: s = "Kalkulator"
 Case 7: s = "Cjenik"
 End Select
-CommandMove cs(index), s, X, Y
+CommandMove cs(Index), s, X, Y
 End Sub
 
-Sub cs_MouseUp (index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Sub cs_MouseUp (Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 capturestatus = 0
-cs_MouseMove index, 0, 0, 1, 1
+cs_MouseMove Index, 0, 0, 1, 1
 End Sub
 
 Sub Htimer_Timer ()
@@ -351,9 +360,23 @@ htimer.Interval = 0
 End Sub
 
 Sub MDIForm_Load ()
-'putbaza = app.Path & "\Zebra_97.mdb"
+
 MakniItalic Me
 Set b = OpenDatabase(putbaza)
+
+'dodaj kolonu broj_narudzbenicu u faktura tablicu
+Dim t As Table
+Set t = b.OpenTable("faktura")
+t.Index = "PrimaryKey"
+If t.Fields.Count = 23 Then
+    Dim Fd As New Field
+    Const DB_TEXT = 10
+    Fd.Name = "broj_narudzbenice"
+    Fd.Type = DB_TEXT
+    Fd.Size = 100
+    MyDB.TableDefs("faktura").Fields.Append Fd
+End If
+
 Timer2_Timer
 End Sub
 
@@ -399,7 +422,7 @@ showw ul_izvodi
 End Sub
 
 Sub mnu_cijenik_Click ()
-Dim t As table
+Dim t As Table
 Set t = b.OpenTable("roba")
 On Error GoTo mnu_cijenik_err
 showw cijenik
@@ -451,10 +474,10 @@ Sub mnu_partneri_Click ()
 showw partneri
 End Sub
 
-Sub mnu_prozori_Click (index As Integer)
+Sub mnu_prozori_Click (Index As Integer)
 On Error Resume Next
 Dim i%
-Select Case index
+Select Case Index
 Case 1:
    mp 11
     frm_mdi.Arrange 0

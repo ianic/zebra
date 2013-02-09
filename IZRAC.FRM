@@ -3,22 +3,51 @@ Begin Form iz_rac
    BackColor       =   &H00C0C0C0&
    BorderStyle     =   3  'Fixed Double
    Caption         =   "Izlazni raèuni - novi"
-   ClientHeight    =   6570
-   ClientLeft      =   225
-   ClientTop       =   2610
+   ClientHeight    =   7065
+   ClientLeft      =   1410
+   ClientTop       =   2655
    ClientWidth     =   10860
    ClipControls    =   0   'False
    ControlBox      =   0   'False
-   Height          =   7080
+   Height          =   7470
    Icon            =   IZRAC.FRX:0000
-   Left            =   165
+   Left            =   1350
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
-   ScaleHeight     =   6570
+   ScaleHeight     =   7065
    ScaleWidth      =   10860
-   Top             =   2160
+   Top             =   2310
    Visible         =   0   'False
    Width           =   10980
+   Begin SSPanel Panel3D10 
+      Alignment       =   0  'Left Justify - TOP
+      BevelInner      =   1  'Inset
+      BevelOuter      =   0  'None
+      BorderWidth     =   1
+      Caption         =   "broj narudžbenice"
+      Font3D          =   3  'Inset w/light shading
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   "MS Sans Serif"
+      FontSize        =   8.25
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      Height          =   375
+      Left            =   30
+      TabIndex        =   63
+      Top             =   5820
+      Width           =   4845
+      Begin TextBox brojNarudzbenice 
+         Height          =   315
+         Left            =   1320
+         MaxLength       =   250
+         ScrollBars      =   2  'Vertical
+         TabIndex        =   64
+         TabStop         =   0   'False
+         Top             =   30
+         Width           =   3495
+      End
+   End
    Begin SSPanel Panel3D9 
       Alignment       =   1  'Left Justify - MIDDLE
       BevelInner      =   1  'Inset
@@ -34,7 +63,7 @@ Begin Form iz_rac
       FontUnderline   =   0   'False
       Height          =   375
       Left            =   5610
-      TabIndex        =   61
+      TabIndex        =   62
       Top             =   0
       Width           =   2955
       Begin ComboBox cboOZ 
@@ -61,14 +90,14 @@ Begin Form iz_rac
       FontUnderline   =   0   'False
       Height          =   375
       Left            =   5610
-      TabIndex        =   59
+      TabIndex        =   60
       Top             =   360
       Width           =   5235
       Begin ComboBox cboNPL 
          Height          =   315
          Left            =   1110
          Style           =   2  'Dropdown List
-         TabIndex        =   60
+         TabIndex        =   61
          Top             =   30
          Width           =   4065
       End
@@ -82,7 +111,7 @@ Begin Form iz_rac
       Font3D          =   3  'Inset w/light shading
       Height          =   375
       Left            =   10350
-      TabIndex        =   58
+      TabIndex        =   59
       Top             =   0
       Width           =   495
    End
@@ -97,7 +126,7 @@ Begin Form iz_rac
       Height          =   375
       Index           =   3
       Left            =   8640
-      TabIndex        =   57
+      TabIndex        =   58
       Top             =   5400
       Width           =   1995
       Begin SSPanel uk 
@@ -111,7 +140,7 @@ Begin Form iz_rac
          Height          =   300
          Index           =   3
          Left            =   420
-         TabIndex        =   52
+         TabIndex        =   53
          Top             =   30
          Width           =   1545
       End
@@ -127,7 +156,7 @@ Begin Form iz_rac
       Height          =   375
       Index           =   2
       Left            =   6660
-      TabIndex        =   55
+      TabIndex        =   56
       Top             =   5400
       Width           =   1995
       Begin SSPanel uk 
@@ -141,7 +170,7 @@ Begin Form iz_rac
          Height          =   300
          Index           =   2
          Left            =   420
-         TabIndex        =   56
+         TabIndex        =   57
          Top             =   30
          Width           =   1545
       End
@@ -157,7 +186,7 @@ Begin Form iz_rac
       Height          =   375
       Index           =   1
       Left            =   4590
-      TabIndex        =   53
+      TabIndex        =   54
       Top             =   5400
       Width           =   2085
       Begin SSPanel uk 
@@ -171,7 +200,7 @@ Begin Form iz_rac
          Height          =   300
          Index           =   1
          Left            =   510
-         TabIndex        =   54
+         TabIndex        =   55
          Top             =   30
          Width           =   1545
       End
@@ -193,7 +222,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   16
       Left            =   5550
-      TabIndex        =   49
+      TabIndex        =   50
       Top             =   2010
       Width           =   1695
       Begin TextBox txt 
@@ -203,7 +232,7 @@ Begin Form iz_rac
          Index           =   5
          Left            =   360
          MaxLength       =   18
-         TabIndex        =   12
+         TabIndex        =   13
          Top             =   30
          Width           =   1305
       End
@@ -225,7 +254,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   15
       Left            =   7230
-      TabIndex        =   48
+      TabIndex        =   49
       Top             =   2010
       Width           =   1695
       Begin TextBox txt 
@@ -235,7 +264,7 @@ Begin Form iz_rac
          Index           =   6
          Left            =   360
          MaxLength       =   18
-         TabIndex        =   13
+         TabIndex        =   14
          Top             =   30
          Width           =   1305
       End
@@ -257,19 +286,21 @@ Begin Form iz_rac
       Height          =   285
       Index           =   12
       Left            =   2820
-      TabIndex        =   46
+      TabIndex        =   47
       Top             =   2010
       Width           =   2745
       Begin SSPanel pnl 
          Alignment       =   4  'Right Justify - MIDDLE
+         BackColor       =   &H00C0C0C0&
          BevelOuter      =   0  'None
          BevelWidth      =   0
          BorderWidth     =   0
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000000&
          Height          =   225
          Index           =   2
          Left            =   1410
-         TabIndex        =   51
+         TabIndex        =   52
          Top             =   30
          Width           =   1275
       End
@@ -280,7 +311,7 @@ Begin Form iz_rac
          Height          =   225
          Index           =   4
          Left            =   120
-         TabIndex        =   11
+         TabIndex        =   12
          TabStop         =   0   'False
          Text            =   "23"
          Top             =   30
@@ -304,7 +335,7 @@ Begin Form iz_rac
          Height          =   225
          Index           =   1
          Left            =   810
-         TabIndex        =   47
+         TabIndex        =   48
          Top             =   30
          Width           =   540
       End
@@ -323,8 +354,8 @@ Begin Form iz_rac
       FontUnderline   =   0   'False
       Height          =   795
       Left            =   8970
-      TabIndex        =   42
-      Top             =   5790
+      TabIndex        =   43
+      Top             =   6210
       Width           =   855
       Begin MaskEdBox kopi 
          Height          =   285
@@ -332,7 +363,7 @@ Begin Form iz_rac
          Mask            =   "#"
          MaxLength       =   1
          PromptChar      =   "_"
-         TabIndex        =   45
+         TabIndex        =   46
          TabStop         =   0   'False
          Top             =   360
          Width           =   225
@@ -351,7 +382,7 @@ Begin Form iz_rac
          FontUnderline   =   0   'False
          Height          =   285
          Left            =   60
-         TabIndex        =   44
+         TabIndex        =   45
          Top             =   390
          Width           =   465
       End
@@ -360,7 +391,7 @@ Begin Form iz_rac
          Font3D          =   3  'Inset w/light shading
          Height          =   255
          Left            =   60
-         TabIndex        =   43
+         TabIndex        =   44
          TabStop         =   0   'False
          Top             =   90
          Value           =   -1  'True
@@ -382,7 +413,7 @@ Begin Form iz_rac
       ForeColor       =   &H00000080&
       Height          =   345
       Left            =   1560
-      TabIndex        =   41
+      TabIndex        =   42
       Top             =   5400
       Width           =   975
    End
@@ -401,8 +432,8 @@ Begin Form iz_rac
       FontUnderline   =   0   'False
       Height          =   795
       Left            =   30
-      TabIndex        =   40
-      Top             =   5790
+      TabIndex        =   41
+      Top             =   6210
       Width           =   8925
       Begin TextBox nap 
          Height          =   735
@@ -410,7 +441,7 @@ Begin Form iz_rac
          MaxLength       =   250
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   14
+         TabIndex        =   15
          TabStop         =   0   'False
          Top             =   30
          Width           =   8085
@@ -433,19 +464,21 @@ Begin Form iz_rac
       Height          =   285
       Index           =   11
       Left            =   30
-      TabIndex        =   38
+      TabIndex        =   39
       Top             =   2010
       Width           =   2805
       Begin SSPanel pnl 
          Alignment       =   4  'Right Justify - MIDDLE
+         BackColor       =   &H00C0C0C0&
          BevelOuter      =   0  'None
          BevelWidth      =   0
          BorderWidth     =   0
+         Font3D          =   3  'Inset w/light shading
          ForeColor       =   &H00000000&
          Height          =   225
          Index           =   1
          Left            =   1470
-         TabIndex        =   50
+         TabIndex        =   51
          Top             =   30
          Width           =   1275
       End
@@ -467,7 +500,7 @@ Begin Form iz_rac
          Height          =   225
          Index           =   0
          Left            =   810
-         TabIndex        =   39
+         TabIndex        =   40
          Top             =   30
          Width           =   570
       End
@@ -477,7 +510,7 @@ Begin Form iz_rac
          Height          =   225
          Index           =   3
          Left            =   150
-         TabIndex        =   10
+         TabIndex        =   11
          Top             =   30
          Width           =   615
       End
@@ -493,7 +526,7 @@ Begin Form iz_rac
       Height          =   375
       Index           =   0
       Left            =   2610
-      TabIndex        =   36
+      TabIndex        =   37
       Top             =   5400
       Width           =   1995
       Begin SSPanel uk 
@@ -507,7 +540,7 @@ Begin Form iz_rac
          Height          =   300
          Index           =   0
          Left            =   420
-         TabIndex        =   37
+         TabIndex        =   38
          Top             =   30
          Width           =   1545
       End
@@ -519,9 +552,9 @@ Begin Form iz_rac
       Height          =   345
       Index           =   0
       Left            =   9840
-      TabIndex        =   35
+      TabIndex        =   36
       TabStop         =   0   'False
-      Top             =   5850
+      Top             =   6270
       Width           =   975
    End
    Begin SSCommand CMD1 
@@ -531,9 +564,9 @@ Begin Form iz_rac
       Height          =   345
       Index           =   1
       Left            =   9840
-      TabIndex        =   34
+      TabIndex        =   35
       TabStop         =   0   'False
-      Top             =   6210
+      Top             =   6630
       Width           =   975
    End
    Begin Data Data1 
@@ -563,7 +596,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   3
       Left            =   6960
-      TabIndex        =   33
+      TabIndex        =   34
       TabStop         =   0   'False
       Top             =   2340
       Width           =   2295
@@ -581,7 +614,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   2
       Left            =   4650
-      TabIndex        =   32
+      TabIndex        =   33
       TabStop         =   0   'False
       Top             =   2340
       Width           =   2295
@@ -599,7 +632,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   1
       Left            =   2340
-      TabIndex        =   31
+      TabIndex        =   32
       TabStop         =   0   'False
       Top             =   2340
       Width           =   2295
@@ -617,7 +650,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   0
       Left            =   30
-      TabIndex        =   30
+      TabIndex        =   31
       TabStop         =   0   'False
       Top             =   2340
       Width           =   2295
@@ -639,13 +672,13 @@ Begin Form iz_rac
       Height          =   375
       Index           =   9
       Left            =   30
-      TabIndex        =   28
+      TabIndex        =   29
       Top             =   1650
       Width           =   1755
       Begin ComboBox jm 
          Height          =   315
          Left            =   600
-         TabIndex        =   6
+         TabIndex        =   7
          Tag             =   "jed_mjere"
          Top             =   30
          Width           =   1125
@@ -668,7 +701,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   8
       Left            =   7230
-      TabIndex        =   27
+      TabIndex        =   28
       Top             =   1740
       Width           =   1695
       Begin TextBox txt 
@@ -678,7 +711,7 @@ Begin Form iz_rac
          Index           =   2
          Left            =   360
          MaxLength       =   18
-         TabIndex        =   9
+         TabIndex        =   10
          Top             =   30
          Width           =   1305
       End
@@ -700,7 +733,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   7
       Left            =   5370
-      TabIndex        =   26
+      TabIndex        =   27
       Top             =   1740
       Width           =   1875
       Begin TextBox txt 
@@ -710,7 +743,7 @@ Begin Form iz_rac
          Index           =   1
          Left            =   540
          MaxLength       =   18
-         TabIndex        =   8
+         TabIndex        =   9
          Top             =   30
          Width           =   1305
       End
@@ -732,7 +765,7 @@ Begin Form iz_rac
       Height          =   285
       Index           =   6
       Left            =   1770
-      TabIndex        =   25
+      TabIndex        =   26
       Top             =   1740
       Width           =   1995
       Begin TextBox txt 
@@ -742,7 +775,7 @@ Begin Form iz_rac
          Index           =   0
          Left            =   660
          MaxLength       =   18
-         TabIndex        =   7
+         TabIndex        =   8
          Top             =   0
          Width           =   1305
       End
@@ -764,7 +797,7 @@ Begin Form iz_rac
       Height          =   375
       Index           =   5
       Left            =   30
-      TabIndex        =   24
+      TabIndex        =   25
       Top             =   1290
       Width           =   8175
       Begin SSPanel Panel3D2 
@@ -783,7 +816,7 @@ Begin Form iz_rac
          Height          =   195
          Index           =   1
          Left            =   6870
-         TabIndex        =   29
+         TabIndex        =   30
          Top             =   90
          Width           =   1245
       End
@@ -792,7 +825,7 @@ Begin Form iz_rac
          Height          =   300
          Left            =   960
          MaxLength       =   50
-         TabIndex        =   5
+         TabIndex        =   6
          Top             =   30
          Width           =   5865
       End
@@ -813,14 +846,14 @@ Begin Form iz_rac
       Height          =   645
       Index           =   2
       Left            =   8520
-      TabIndex        =   22
+      TabIndex        =   23
       Top             =   720
       Width           =   2325
       Begin TextBox Text1 
          Height          =   285
          Index           =   0
          Left            =   1020
-         TabIndex        =   3
+         TabIndex        =   4
          Text            =   "Text1"
          Top             =   30
          Width           =   585
@@ -832,7 +865,7 @@ Begin Form iz_rac
          Mask            =   "##/##/####"
          MaxLength       =   10
          PromptChar      =   "_"
-         TabIndex        =   4
+         TabIndex        =   5
          Top             =   330
          Width           =   1245
       End
@@ -851,7 +884,7 @@ Begin Form iz_rac
          Height          =   255
          Index           =   3
          Left            =   60
-         TabIndex        =   23
+         TabIndex        =   24
          Top             =   330
          Width           =   495
       End
@@ -861,7 +894,7 @@ Begin Form iz_rac
       BevelInner      =   1  'Inset
       BevelOuter      =   0  'None
       BorderWidth     =   1
-      Caption         =   "datum"
+      Caption         =   "vrijeme"
       Font3D          =   3  'Inset w/light shading
       FontBold        =   0   'False
       FontItalic      =   0   'False
@@ -869,12 +902,23 @@ Begin Form iz_rac
       FontSize        =   8.25
       FontStrikethru  =   0   'False
       FontUnderline   =   0   'False
-      Height          =   345
+      Height          =   375
       Index           =   1
-      Left            =   6570
-      TabIndex        =   21
+      Left            =   5610
+      TabIndex        =   22
       Top             =   720
-      Width           =   1965
+      Width           =   2900
+      Begin MaskEdBox vrijeme 
+         Height          =   285
+         Index           =   0
+         Left            =   2040
+         Mask            =   "##:##"
+         MaxLength       =   5
+         PromptChar      =   "_"
+         TabIndex        =   3
+         Top             =   30
+         Width           =   735
+      End
       Begin MaskEdBox MaskedEdit1 
          Height          =   285
          Index           =   0
@@ -903,7 +947,7 @@ Begin Form iz_rac
       Height          =   375
       Index           =   0
       Left            =   8550
-      TabIndex        =   19
+      TabIndex        =   20
       Top             =   0
       Width           =   1815
       Begin SSPanel br 
@@ -920,7 +964,7 @@ Begin Form iz_rac
          ForeColor       =   &H00000080&
          Height          =   285
          Left            =   690
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   60
          Width           =   1065
       End
@@ -940,7 +984,7 @@ Begin Form iz_rac
       FontUnderline   =   0   'False
       Height          =   345
       Left            =   60
-      TabIndex        =   17
+      TabIndex        =   18
       Top             =   0
       Width           =   5565
       Begin SSPanel Panel3D2 
@@ -959,7 +1003,7 @@ Begin Form iz_rac
          Height          =   195
          Index           =   0
          Left            =   1950
-         TabIndex        =   18
+         TabIndex        =   19
          Top             =   60
          Width           =   2835
       End
@@ -980,7 +1024,7 @@ Begin Form iz_rac
       ForeColor       =   &H00800000&
       Height          =   885
       Left            =   60
-      TabIndex        =   16
+      TabIndex        =   17
       Top             =   360
       Width           =   5565
    End
@@ -1010,7 +1054,7 @@ Begin Form iz_rac
       SplitPropsGlobal=   -1  'True
       SplitTabMode    =   0  'Don't tab across splits
       TabCapture      =   0   'False
-      TabIndex        =   15
+      TabIndex        =   16
       TabStop         =   0   'False
       Top             =   2640
       UseBookmarks    =   -1  'True
@@ -1103,12 +1147,10 @@ Dim i%
 mp 11
 Select Case Index
 Case 0
-   If Not (Len(sk) > 0 And IsDate(maskededit1(0)) And IsDate(maskededit1(1)) And data1.Recordset.RecordCount > 0) Then MsgBox "Neispravno upisani podaci!", 16, "Greška": mp 0: Exit Sub
-   On Error GoTo rb
-   BeginTrans
-   Dim t As table
-   Set t = b.OpenTable("faktura")
-   t.Index = "PrimaryKey"
+   Dim vrijemeRacuna
+   vrijemeRacuna = maskededit1(0) + " " + vrijeme(0)
+   If Not IsDate(vrijemeRacuna) Then MsgBox "Vrijeme nije upisano!", 16, "Greška": mp 0: Exit Sub
+   If Not (Len(sk) > 0 And IsDate(vrijemeRacuna) And IsDate(maskededit1(1)) And data1.Recordset.RecordCount > 0) Then MsgBox "Neispravno upisani podaci!", 16, "Greška": mp 0: Exit Sub
    Dim mbr As Long, oldbr As Long
    If memode = 0 Then
       mbr = Maxbr_racun()
@@ -1124,6 +1166,18 @@ Case 0
             data1.Recordset.MoveNext
          Loop
       End If
+   End If
+   If Not ProvjeriDatumRacuna(br, vrijemeRacuna) Then
+       mp 0
+       Exit Sub
+   End If
+   On Error GoTo rb
+   BeginTrans
+   Dim t As table
+   Set t = b.OpenTable("faktura")
+   t.Index = "PrimaryKey"
+
+   If memode = 0 Then
       t.AddNew
    Else
       t.Seek "=", memode
@@ -1132,7 +1186,7 @@ Case 0
    End If
       t!sifra_kupca = sk
       If memode = 0 Then t!br_racun = mbr
-      t!datum = maskededit1(0)
+      t!datum = vrijemeRacuna
       t!valuta = maskededit1(1)
       t!tip = pnlTR
       For i = 0 To 3
@@ -1145,13 +1199,14 @@ Case 0
         'provjeri je li još uvijek plaæen
         If db(t!vsp) > db(t!placeno_izn) Then t!placeno = False
       End If
+      t!broj_narudzbenice = brojNarudzbenice
    t.Update
    'If memode <> 0 Then 'prkopiraj iz pomoæne u glavnu bazu
    b.Execute "delete * from prodroba where br_racun=" & mbr
    b.Execute "INSERT INTO prodroba SELECT DISTINCTROW x_prodroba.* FROM x_prodroba where br_racun=" & br
    'End If
    CommitTrans
-   If memode = 0 And oldbr <> mbr Then MsgBox "Broj raèuna je pri upisu promjenjen u " & mbr & " jer je raèun " & oldbr & "veæ upisan!", 64, "Promjena broja raèuna"
+   If memode = 0 And oldbr <> mbr Then MsgBox "Broj raèuna je pri upisu promjenjen u " & mbr & " jer je raèun " & oldbr & " veæ upisan!", 64, "Promjena broja raèuna"
    If ispis Then
    '   mp 11 ispis raèuna
       Dim k%
@@ -1225,6 +1280,7 @@ Select Case memode
 Case 0'novi raèun
    ispis = True: kopi = 3
    maskededit1(0) = df(Now): maskededit1(1) = df(Now + 15): text1(0) = 15
+   vrijeme(0) = dVrijeme(Now)
    br = Maxbr_racun()
    'data1.RecordSource = "select * from prodroba where br_racun=" & br
    top = 100
@@ -1237,10 +1293,12 @@ Case Else'postojeæi raèun
    PrikaziKupca (t!sifra_kupca)
    br = t!br_racun
    maskededit1(0) = df(ds(t!datum)): maskededit1(1) = df(ds(t!valuta)): MaskedEdit1_LostFocus 0
+   vrijeme(0) = dVrijeme(ds(t!datum))
    pnlTR = ds(t!tip)
    cbonpl.ListIndex = db(t!npl)
    cboOZNAKA1 ds(t!oznaka), cbooz
    nap = t!nap
+   brojNarudzbenice = t!broj_narudzbenice 'polje ne postoji u starim tablicama
    b.Execute "INSERT INTO x_prodroba SELECT DISTINCTROW prodroba.* FROM prodroba where br_racun=" & br
 End Select
 
@@ -1277,10 +1335,12 @@ Function Maxbr_racun () As Long
    If t.RecordCount > 0 Then t.MoveLast : Maxbr_racun = t!br_racun + 1 Else Maxbr_racun = 1
 End Function
 
+
 Sub na_GotFocus ()
 cbooz.TabStop = False
 maskededit1(0).TabStop = False
 maskededit1(1).TabStop = False
+vrijeme(0).TabStop = False
 text1(0).TabStop = False
 End Sub
 
@@ -1382,6 +1442,23 @@ Else
 End If
 
 End Sub
+
+Function ProvjeriDatumRacuna (broj, datum)
+Dim s As snapshot
+Set s = b.CreateSnapshot("select datum, br_racun from faktura where br_racun > " + CStr(broj) + " and datum < #" & Format(datum, "mm\/dd\/yyyy hh:mm") & "# order by datum desc")
+If s.RecordCount > 0 Then
+    MsgBox "Raèun " & s!br_racun & " ima veæi broj, a manje vrijeme " & Format(s!datum, "dd.mm.yyyy hh:mm") & "!", 16, "Krivo vrijeme"
+    ProvjeriDatumRacuna = False
+    Exit Function
+End If
+Set s = b.CreateSnapshot("select datum, br_racun from faktura where br_racun < " + CStr(broj) + " and datum > #" & Format(datum, "mm\/dd\/yyyy hh:mm") & "# order by datum desc")
+If s.RecordCount > 0 Then
+    MsgBox "Raèun " & s!br_racun & " ima manji broj, a veæe vrijeme " & Format(s!datum, "dd.mm.yyyy hh:mm") & "!", 16, "Krivo vrijeme"
+    ProvjeriDatumRacuna = False
+    Exit Function
+End If
+ProvjeriDatumRacuna = True
+End Function
 
 Sub racunajnaplatu ()
 'Exit Sub
@@ -1607,5 +1684,15 @@ Next i
 pnl(1) = Format(rabi, "#,##0.00##")
 pnl(2) = Format(pori, "#,##0.00##")
 
+End Sub
+
+Sub vrijeme_KeyPress (Index As Integer, KeyAscii As Integer)
+If KeyAscii = 13 Then vrijeme_LostFocus Index
+End Sub
+
+Sub vrijeme_LostFocus (Index As Integer)
+If Not IsDate(vrijeme(0)) Then
+    vrijeme(0) = "__:__"
+End If
 End Sub
 
