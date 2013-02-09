@@ -1,0 +1,21 @@
+Spajanje tablica ATTACH:
+
+Objašnjenje:
+tablica PARTNERI se nalazi samo u glavnoj bazi(bazi ZEBRE),
+ostale baze samo attachiraju tu tablicu zako da sve izmjene geje god ih 
+naprvili vide se svda istovremeno jer rade s istom tablicom
+sve ostalo pri radu je jednako kao da se ta tablica nalazi u svim bazama pojedinaèno
+
+Postupak ATTACH-iranja (spajanja):
+
+1.pokrenuti program ATTACH.exe
+2.u BAZA IZ KOJE SE SPAJA UPISATI put do glavne baze npr:
+	d:\zebra\98god\baze\zebra_98.mdb	
+3:u Baza u kojoj je attach upisati put do baze u kojoj je attach npr:
+	d:\zebra\98god\baze\zebra_98.mdb	
+4.u ime tablice u orig. bazi upisati partneri
+5.u ime tablice u bazi u kojoj je attach upisati takuðer parneri
+6.pritisnuti dugme ATTACH
+7.ako javi tablice su uspješno spojene sve je ok zatvorim program
+ako javi nešto drugo provjeriti puteve do baza i ponoviti
+

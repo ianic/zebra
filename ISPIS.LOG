@@ -1,0 +1,10 @@
+Line 19: Class SSCommand of control Command3D1 was not a loaded control class.
+Line 30: Class SSOption of control o was not a loaded control class.
+Line 41: Class SSOption of control o was not a loaded control class.
+Line 21: The property name Caption in Command3D1 is invalid.
+Line 22: The property name Font3D in Command3D1 is invalid.
+Line 31: The property name Caption in o is invalid.
+Line 32: The property name Font3D in o is invalid.
+Line 42: The property name Caption in o is invalid.
+Line 43: The property name Font3D in o is invalid.
+Line 49: The property name Value in o is invalid.

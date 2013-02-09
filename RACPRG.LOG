@@ -1,0 +1,59 @@
+Line 31: Class Grid of control g1 was not a loaded control class.
+Line 49: Class TrueGrid of control tg2 was not a loaded control class.
+Line 82: Class AniPushButton of control AniButton1 was not a loaded control class.
+Line 91: Class SSCommand of control Cispravak was not a loaded control class.
+Line 102: Class SSCheck of control Ch2 was not a loaded control class.
+Line 118: Class SSCheck of control ch1 was not a loaded control class.
+Line 148: Class TrueGrid of control tg1 was not a loaded control class.
+Line 180: Class SSCommand of control CSort was not a loaded control class.
+Line 191: Class SSCommand of control CFilter was not a loaded control class.
+Line 202: Class SSCommand of control COsvjezi was not a loaded control class.
+Line 32: The property name FixedCols in g1 is invalid.
+Line 40: The property name HighLight in g1 is invalid.
+Line 42: The property name ScrollBars in g1 is invalid.
+Line 50: The property name AllowArrows in tg2 is invalid.
+Line 51: The property name AllowTabs in tg2 is invalid.
+Line 54: The property name Editable in tg2 is invalid.
+Line 55: The property name EditDropDown in tg2 is invalid.
+Line 56: The property name ExposeCellMode in tg2 is invalid.
+Line 57: The property name FetchMode in tg2 is invalid.
+Line 64: The property name HeadingHeight in tg2 is invalid.
+Line 66: The property name HorzLines in tg2 is invalid.
+Line 67: The property name Layout in tg2 is invalid.
+Line 68: The property name LayoutIndex in tg2 is invalid.
+Line 70: The property name LinesPerRow in tg2 is invalid.
+Line 71: The property name MarqueeUnique in tg2 is invalid.
+Line 72: The property name SplitPropsGlobal in tg2 is invalid.
+Line 73: The property name SplitTabMode in tg2 is invalid.
+Line 74: The property name TabCapture in tg2 is invalid.
+Line 77: The property name UseBookmarks in tg2 is invalid.
+Line 80: The property name WrapCellPointer in tg2 is invalid.
+Line 92: The property name Caption in Cispravak is invalid.
+Line 93: The property name Font3D in Cispravak is invalid.
+Line 103: The property name Caption in Ch2 is invalid.
+Line 104: The property name Font3D in Ch2 is invalid.
+Line 119: The property name Caption in ch1 is invalid.
+Line 120: The property name Font3D in ch1 is invalid.
+Line 149: The property name AllowArrows in tg1 is invalid.
+Line 150: The property name AllowTabs in tg1 is invalid.
+Line 153: The property name Editable in tg1 is invalid.
+Line 154: The property name EditDropDown in tg1 is invalid.
+Line 155: The property name ExposeCellMode in tg1 is invalid.
+Line 156: The property name FetchMode in tg1 is invalid.
+Line 163: The property name HeadingHeight in tg1 is invalid.
+Line 165: The property name HorzLines in tg1 is invalid.
+Line 166: The property name Layout in tg1 is invalid.
+Line 167: The property name LayoutIndex in tg1 is invalid.
+Line 169: The property name LinesPerRow in tg1 is invalid.
+Line 170: The property name MarqueeUnique in tg1 is invalid.
+Line 171: The property name SplitPropsGlobal in tg1 is invalid.
+Line 172: The property name SplitTabMode in tg1 is invalid.
+Line 173: The property name TabCapture in tg1 is invalid.
+Line 176: The property name UseBookmarks in tg1 is invalid.
+Line 178: The property name WrapCellPointer in tg1 is invalid.
+Line 181: The property name Caption in CSort is invalid.
+Line 182: The property name Font3D in CSort is invalid.
+Line 192: The property name Caption in CFilter is invalid.
+Line 193: The property name Font3D in CFilter is invalid.
+Line 203: The property name Caption in COsvjezi is invalid.
+Line 204: The property name Font3D in COsvjezi is invalid.
