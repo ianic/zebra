@@ -94,6 +94,15 @@ Else
 End If
 End Function
 
+Function dVrijeme (d)
+
+If IsDate(d) Then
+    dVrijeme = Format(d, "hh:mm")
+Else
+    dVrijeme = "__:__"
+End If
+End Function
+
 Sub h (s$)
 frm_MDI.SL = s
 End Sub

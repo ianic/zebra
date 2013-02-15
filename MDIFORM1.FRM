@@ -368,13 +368,17 @@ Set b = OpenDatabase(putbaza)
 Dim t As Table
 Set t = b.OpenTable("faktura")
 t.Index = "PrimaryKey"
-If t.Fields.Count = 23 Then
+Dim fc
+fc = t.Fields.Count
+t.Close
+
+If fc = 22 Then
     Dim Fd As New Field
     Const DB_TEXT = 10
     Fd.Name = "broj_narudzbenice"
     Fd.Type = DB_TEXT
     Fd.Size = 100
-    MyDB.TableDefs("faktura").Fields.Append Fd
+    b.TableDefs("faktura").Fields.Append Fd
 End If
 
 Timer2_Timer

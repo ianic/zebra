@@ -101,7 +101,7 @@ ispisxy ds(t1!por_br), 2900 + x, 5700 + y
 
 
 
-ispisxy (t!datum) & ".", 7600 + x, 4200 + y
+ispisxy Format(t!datum, "dd.mm.yyyy. hh:mm") & "", 7600 + x, 4200 + y
 ispisxy (t!datum) & ".", 8150 + x, 4700 + y
 ispisxy (t!valuta) & ".", 8150 + x, 5200 + y
 
@@ -345,7 +345,7 @@ Dim broj As String
 broj = (t!br_racun) & TextporedBrojaRacuna()
 ispisxy broj, 3600 - printer.TextWidth((t!br_racun)) / 2 + x, 2650 + y
 font 12, 0, 0
-ispisxy (t!datum) & ".", 6100 + x, 2750 + y
+ispisxy Format(t!datum, "dd.mm.yyyy. hh:mm") & "", 6100 + x, 2750 + y
 ispisxy "31.12.2012.", 9650 + x, 2750 + y
 
 Dim s As snapshot, i As Integer
