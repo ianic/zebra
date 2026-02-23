@@ -9,14 +9,14 @@ Begin Form iz_rac
    ClientWidth     =   10860
    ClipControls    =   0   'False
    ControlBox      =   0   'False
-   Height          =   7725
+   Height          =   7470
    Icon            =   IZRAC.FRX:0000
    Left            =   1350
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    ScaleHeight     =   7065
    ScaleWidth      =   10860
-   Top             =   2055
+   Top             =   2310
    Visible         =   0   'False
    Width           =   10980
    Begin SSPanel Panel3D10 
@@ -954,7 +954,7 @@ Begin Form iz_rac
          Caption         =   "12345"
          Font3D          =   3  'Inset w/light shading
          FontBold        =   -1  'True
-         FontItalic      =   -1  'True
+         FontItalic      =   0   'False
          FontName        =   "MS Sans Serif"
          FontSize        =   9.75
          FontStrikethru  =   0   'False
@@ -1008,7 +1008,7 @@ Begin Form iz_rac
       Begin TextBox sk 
          Height          =   285
          Left            =   570
-         MaxLength       =   10
+         MaxLength       =   11
          TabIndex        =   0
          Top             =   30
          Width           =   1305

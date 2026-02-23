@@ -4,18 +4,18 @@ Begin Form ul_rac
    BorderStyle     =   3  'Fixed Double
    Caption         =   "Ulazni raèuni - novi"
    ClientHeight    =   7425
-   ClientLeft      =   3435
-   ClientTop       =   1920
+   ClientLeft      =   3300
+   ClientTop       =   4065
    ClientWidth     =   9375
    ClipControls    =   0   'False
    ControlBox      =   0   'False
-   Height          =   8085
-   Left            =   3375
+   Height          =   7830
+   Left            =   3240
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    ScaleHeight     =   7425
    ScaleWidth      =   9375
-   Top             =   1320
+   Top             =   3720
    Visible         =   0   'False
    Width           =   9495
    Begin ComboBox cboTR 
@@ -897,7 +897,7 @@ Begin Form ul_rac
       Begin TextBox sk 
          Height          =   285
          Left            =   780
-         MaxLength       =   10
+         MaxLength       =   11
          TabIndex        =   0
          Top             =   30
          Width           =   1305

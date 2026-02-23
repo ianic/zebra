@@ -7,7 +7,7 @@ Begin Form partneri
    ClientTop       =   930
    ClientWidth     =   10620
    FillColor       =   &H000000C0&
-   Height          =   7170
+   Height          =   7065
    Icon            =   MP_PAR.FRX:0000
    KeyPreview      =   -1  'True
    Left            =   645
@@ -15,7 +15,7 @@ Begin Form partneri
    MDIChild        =   -1  'True
    ScaleHeight     =   6660
    ScaleWidth      =   10620
-   Top             =   480
+   Top             =   585
    Width           =   10740
    Begin SSPanel p 
       Alignment       =   0  'Left Justify - TOP
@@ -366,7 +366,7 @@ Begin Form partneri
          Height          =   285
          Index           =   0
          Left            =   30
-         MaxLength       =   10
+         MaxLength       =   11
          TabIndex        =   1
          Text            =   "Text1"
          Top             =   210
