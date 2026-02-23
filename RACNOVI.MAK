@@ -38,9 +38,9 @@ U_UNI_ED.FRM
 ZIP.FRM
 KNJIGA.FRM
 P_ULROBA.FRM
-ProjWinSize=147,953,242,488
-ProjWinShow=0
-IconForm="FRM_MDI"
+ProjWinSize=141,706,242,488
+ProjWinShow=2
+IconForm="baze"
 Title="Raèuni"
-ExeName="IZD2C.EXE"
-Path="..\IZDAV2"
+ExeName="RAC2025.EXE"
+Path="..\ZEBRA"

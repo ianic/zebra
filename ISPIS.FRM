@@ -7,14 +7,14 @@ Begin Form ispis1
    ClientLeft      =   2235
    ClientTop       =   1695
    ClientWidth     =   4755
-   Height          =   1485
+   Height          =   1545
    Left            =   2175
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   975
    ScaleWidth      =   4755
-   Top             =   1245
+   Top             =   1185
    Width           =   4875
    Begin SSCommand Command3D1 
       AutoSize        =   2  'Adjust Button Size To Picture

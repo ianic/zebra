@@ -9,14 +9,14 @@ Begin Form iz_rac
    ClientWidth     =   10860
    ClipControls    =   0   'False
    ControlBox      =   0   'False
-   Height          =   7470
+   Height          =   7725
    Icon            =   IZRAC.FRX:0000
    Left            =   1350
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    ScaleHeight     =   7065
    ScaleWidth      =   10860
-   Top             =   2310
+   Top             =   2055
    Visible         =   0   'False
    Width           =   10980
    Begin SSPanel Panel3D10 
@@ -291,7 +291,6 @@ Begin Form iz_rac
       Width           =   2745
       Begin SSPanel pnl 
          Alignment       =   4  'Right Justify - MIDDLE
-         BackColor       =   &H00C0C0C0&
          BevelOuter      =   0  'None
          BevelWidth      =   0
          BorderWidth     =   0
@@ -469,7 +468,6 @@ Begin Form iz_rac
       Width           =   2805
       Begin SSPanel pnl 
          Alignment       =   4  'Right Justify - MIDDLE
-         BackColor       =   &H00C0C0C0&
          BevelOuter      =   0  'None
          BevelWidth      =   0
          BorderWidth     =   0
@@ -1335,7 +1333,6 @@ Function Maxbr_racun () As Long
    If t.RecordCount > 0 Then t.MoveLast : Maxbr_racun = t!br_racun + 1 Else Maxbr_racun = 1
 End Function
 
-
 Sub na_GotFocus ()
 cbooz.TabStop = False
 maskededit1(0).TabStop = False
@@ -1630,8 +1627,8 @@ If d(0) = 0 Then Exit Sub
 Select Case Index
  Case 0, 1   ' u originalu
      d(2) = d(1) * d(0)    ' u originalu
-     d(6) = d(6) * (1 - d(3) / 100) * (1 + d(4) / 100)   ' u originalu
-     d(5) = d(6) / d(0)   ' u originalu
+    ' d(6) = d(6) * (1 - d(3) / 100) * (1 + d(4) / 100)   ' u originalu
+    ' d(5) = d(6) / d(0)   ' u originalu
 
 Case 2
     d(1) = d(2) / d(0)
@@ -1639,43 +1636,43 @@ Case 2
 Case 5, 6
     If Index = 5 Then d(6) = d(5) * d(0)
 
-    rabi = vbp * d(3) / 100       ' u originalu
-    pori = (vbp - rabi) * d(4) / 100     ' u originalu
+   ' rabi = vbp * d(3) / 100       ' u originalu
+  '  pori = (vbp - rabi) * d(4) / 100     ' u originalu
 
     d(2) = d(6) / (1 - d(3) / 100) / (1 + d(4) / 100)  'd(6) + rabi - pori
     d(1) = d(2) / d(0)
 End Select
 
 'proraèun
- Select Case Index   ' u originalu
- Case 0, 1, 2     ' u originalu
+ ' Select Case Index   ' u originalu
+ ' Case 0, 1, 2     ' u originalu
     zaok d(1), 2
     d(2) = d(1) * d(0)
     vbp = d(2)
     rabi = vbp * d(3) / 100
     pori = (vbp - rabi) * d(4) / 100
 
-    zaok d(2), 2    ' u originalu
+  '  zaok d(2), 2    ' u originalu
     zaok rabi, 4
     zaok pori, 4
 
     d(6) = d(2) - rabi + pori
     d(5) = d(6) / d(0)
 
- Case 3, 4, 5, 6           ' u originalu
-     d(5) = d(6) / d(0)     ' u originalu
-     vbp = d(6) / (1 + d(4) / 100) / (1 - d(3) / 100)       ' u originalu
-     vbp = d(6) / (1 - d(3) / 100 + d(4) / 100 - d(3) * d(4) / 10000)    ' u originalu
-     rabi = vbp * d(3) / 100               ' u originalu
-     pori = (vbp - rabi) * d(4) / 100      ' u originalu
+ ' Case 3, 4, 5, 6           ' u originalu
+  '   d(5) = d(6) / d(0)     ' u originalu
+  '   vbp = d(6) / (1 + d(4) / 100) / (1 - d(3) / 100)       ' u originalu
+  '   vbp = d(6) / (1 - d(3) / 100 + d(4) / 100 - d(3) * d(4) / 10000)    ' u originalu
+ '    rabi = vbp * d(3) / 100               ' u originalu
+ '    pori = (vbp - rabi) * d(4) / 100      ' u originalu
 
-     zaok d(6), 2      ' u originalu
-     zaok rabi, 2     ' u originalu
-     zaok pori, 2      ' u originalu
+ '    zaok d(6), 2      ' u originalu
+  '   zaok rabi, 2     ' u originalu
+  '   zaok pori, 2      ' u originalu
 
-     d(2) = d(6) + rabi - pori     ' u originalu
-     d(1) = d(2) / d(0)            ' u originalu
- End Select      ' u originalu
+  '   d(2) = d(6) + rabi - pori     ' u originalu
+  '   d(1) = d(2) / d(0)            ' u originalu
+ ' End Select      ' u originalu
 
 For i = 1 To 6
     txt(i) = Format(d(i), "#,##0.00##")

@@ -38,9 +38,9 @@ U_UNI_ED.FRM
 ZIP.FRM
 KNJIGA.FRM
 P_ULROBA.FRM
-ProjWinSize=28,453,342,612
+ProjWinSize=28,453,539,768
 ProjWinShow=0
-IconForm="FRM_MDI"
+IconForm="baze"
 Title="Raèuni"
-ExeName="RACEURO.EXE"
+ExeName="RAC2024.EXE"
 Path="..\ZEBRA"

@@ -6,14 +6,14 @@ Begin Form rac_pregled
    ClientLeft      =   570
    ClientTop       =   1395
    ClientWidth     =   11070
-   Height          =   6690
+   Height          =   6840
    Icon            =   RACPRG.FRX:0000
    Left            =   510
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
    ScaleHeight     =   6180
    ScaleWidth      =   11070
-   Top             =   945
+   Top             =   795
    Width           =   11190
    Begin Data Data1 
       Caption         =   "Data1"

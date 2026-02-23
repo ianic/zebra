@@ -9,13 +9,13 @@ Begin Form ul_rac
    ClientWidth     =   9375
    ClipControls    =   0   'False
    ControlBox      =   0   'False
-   Height          =   7935
+   Height          =   8085
    Left            =   3375
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    ScaleHeight     =   7425
    ScaleWidth      =   9375
-   Top             =   1470
+   Top             =   1320
    Visible         =   0   'False
    Width           =   9495
    Begin ComboBox cboTR 
@@ -929,7 +929,7 @@ Begin Form ul_rac
       HorzLines       =   2  '3D
       Layout          =   ULRAC.FRX:0000
       LayoutIndex     =   1
-      Left            =   30
+      Left            =   0
       LinesPerRow     =   1
       MarqueeUnique   =   -1  'True
       SplitPropsGlobal=   -1  'True

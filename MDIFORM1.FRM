@@ -1,16 +1,16 @@
 VERSION 2.00
 Begin MDIForm FRM_MDI 
-   Caption         =   "Raèuni"
-   ClientHeight    =   6360
-   ClientLeft      =   1320
-   ClientTop       =   1950
-   ClientWidth     =   6045
-   Height          =   7050
+   Caption         =   "RAÈUNI EURO"
+   ClientHeight    =   6675
+   ClientLeft      =   675
+   ClientTop       =   3660
+   ClientWidth     =   8460
+   Height          =   7665
    Icon            =   MDIFORM1.FRX:0000
-   Left            =   1260
+   Left            =   615
    LinkTopic       =   "MDIForm1"
-   Top             =   1320
-   Width           =   6165
+   Top             =   2730
+   Width           =   8580
    WindowState     =   2  'Maximized
    Begin SSPanel Panel3D1 
       Align           =   1  'Align Top
@@ -19,7 +19,7 @@ Begin MDIForm FRM_MDI
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   6045
+      Width           =   8460
       Begin Timer Htimer 
          Left            =   2250
          Top             =   60

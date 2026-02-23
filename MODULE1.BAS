@@ -58,12 +58,13 @@ If t.NoMatch Then Exit Sub
         Dim s1$, s2$, l1&
         Dim s As snapshot
         Dim i As Integer
-        If IsPonuda() Then
-
-Else
-
+       If IsPonuda() Then
+        
+       
+ Else
+ 
+ font 12, 0, 0
 'podaci o kupcu
-ispisxy "Kupac:", 1551 + x, 2000 + y
 ispisxy ds(t1!naziv_1), 1551 + x, 2700 + y
 ispisxy ds(t1!naziv_2), 1551 + x, 3000 + y
 ispisxy ds(t1!adresa), 1551 + x, 3300 + y
@@ -71,39 +72,57 @@ ispisxy ds(t1!mjesto), 1551 + x, 3700 + y
 
 'izdavaštvo
 font 12, -1, -1
-ispisxy TextIznadBrojaRacuna(), 8000 + x, 3650 + y
+ispisxy TextIznadBrojaRacuna(), 6600 + x, 2500 + y
 
 font 20, -1, 0
 'broj raèuna  & "/1"   & "/2"
+
+
 Dim broj As String
+
+
 broj = (t!br_racun) & TextporedBrojaRacuna()
-ispisxy broj, 9000 - printer.TextWidth(broj) / 2 + x, 3050 + y
 
+'ispisuje se na ponudi
+'broj = (t!br_racun)
+'ispisxy broj, 8600 - printer.TextWidth(broj) / 2 + x, 3000 + y
 
-'ispis br. narudžbe
+ispisxy broj, 9200 - printer.TextWidth(broj) / 2 + x, 3000 + y
+
+broj = (t!br_racun)
+
 font 11, 0, 0
-Dim nar As String
-nar = Left(t!nap, 3)
 
-If nar = "nar" Then
+'ne ispisuje se na ponudi
+ispisxy (t!broj_narudzbenice), 3400 + x, 5300 + y
+
+'Dim nar As String
+'nar = Left(t!nap, 3)
+
+'If nar = "nar" Then
    ' ispisxy "Narudžbenica br.", 1551 + x, 5500 + y
-   nar = Left(t!nap, 15)
-   i = Len(nar)
-   nar = Right(nar, i - 3)
-     ispisxy nar, 3100 + x, 5200 + y
-End If
+ '  nar = Left(t!nap, 15)
+ '  i = Len(nar)
+ '  nar = Right(nar, i - 3)
+ '   ispisxy nar, 3100 + x, 5200 + y
+'End If
+
 
 
 'porezni broj
-ispisxy ds(t1!por_br), 2900 + x, 5700 + y
-'ispisxy "JMBG:1907942302826", 8300 + x, 5300 + y
+ispisxy ds(t1!por_br), 3000 + x, 5750 + y
 
 
+ispisxy Format(t!datum, "dd.mm.yyyy. hh:mm") & "", 7700 + x, 4250 + y
+
+'ponuda datum
+' ispisxy Format(t!datum, "dd.mm.yyyy.") & "", 7650 + x, 4250 + y
 
 
-ispisxy Format(t!datum, "dd.mm.yyyy. hh:mm") & "", 7600 + x, 4200 + y
-ispisxy (t!datum) & ".", 8150 + x, 4700 + y
-ispisxy (t!valuta) & ".", 8150 + x, 5200 + y
+'ne ispisuje se na ponudi
+ispisxy Format(t!datum, "dd.mm.yyyy.") & "", 8200 + x, 4800 + y
+ispisxy (t!valuta) & ".", 8200 + x, 5300 + y
+
 
 
 'ispsi robe
@@ -123,16 +142,16 @@ If s!kolicina <> 0 Then
    font 11, 0, 0
    ispisxy (Left(s!nazivrobe, 35)), 1400 + x, y + i
    pdv = s!pdvp
-   ispisxy (pdv) & "%", 5450 + x, y + i
-   ispisxy (s!jed_mjere), 6150 + x, y + i
+   ispisxy (pdv) & "%", 5650 + x, y + i
+   ispisxy (s!jed_mjere), 6350 + x, y + i
    s1 = Format(s!kolicina, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 7700 + x - l1, y + i
+   ispisxy s1, 7900 + x - l1, y + i
    s1 = Format(s!cbp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 8800 + x - l1, y + i
+   ispisxy s1, 9000 + x - l1, y + i
    s1 = Format(s!rabp): l1 = printer.TextWidth(s1)
    ispisxy s1, 9700 + x - l1, y + i
    s1 = Format(s!vbp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 11250 + x - l1, y + i
+   ispisxy s1, 11000 + x - l1, y + i
 Else ispisxy (s!nazivrobe), 1400 + x, y + i
 End If
 
@@ -142,7 +161,7 @@ End If
        printer.NewPage
        i = 3000
    font 12, 0, 0
-   ispisxy "___________________________________________________________________________________", 1400 + x, y + i
+   ispisxy "_____________________________________________________________________________________", 1400 + x, y + i
    i = i + 300
        strana = strana + 1
    Else i = i + 300
@@ -159,7 +178,7 @@ End If
         uk(2) = uk(2) + s!vbp - s!vbp / 100 * s!rabp
         End If
       
-    If pdv = 10 Then
+    If pdv = 13 Then
         uk(3) = uk(3) + s!vbp - s!vbp / 100 * s!rabp
        End If
     If pdv = 0 Then
@@ -168,12 +187,12 @@ End If
   s.MoveNext
 Loop
 
-'If t!rabi > 0 Then
-'   font 12, 0, 0
-'   ispisxy "- " & Format(t!rabp, "Standard") & "% rabata", 6750 + x, 10850 + y
-'   font 14, 0, 0
-'   ispisxy Format(t!rabi, "Standard"), 9650 + x + 1700 - printer.TextWidth(Format(t!rabi, "standard")), 10850 + y
-'End If
+If t!rabi > 0 Then
+   font 12, 0, 0
+   ispisxy "- " & Format(t!rabp, "Standard") & "% rabata", 6750 + x, 10850 + y
+   font 14, 0, 0
+  ispisxy Format(t!rabi, "Standard"), 9650 + x + 1700 - printer.TextWidth(Format(t!rabi, "standard")), 10850 + y
+End If
 
 
    If i > 13000 Then
@@ -190,30 +209,47 @@ Loop
 'TOTALI
    font 12, 0, 0
    
-   ispisxy "___________________________________________________________________________________", 1400 + x, y + i
+   ispisxy "_____________________________________________________________________________________", 1400 + x, y + i
 
    s1 = Format(t!vbp, "standard"): l1 = printer.TextWidth(s1)
    ispisxy "Iznos naknade", 8000, 400 + y + i
-   ispisxy s1, 11250 + x - l1, 400 + y + i
+   ispisxy s1, 11000 + x - l1, 400 + y + i
    
    s1 = Format(t!rab, "standard"): l1 = printer.TextWidth(s1)
    ispisxy "Iznos rabata", 8000, 800 + y + i
-   ispisxy s1, 11250 + x - l1, 800 + y + i
+   ispisxy s1, 11000 + x - l1, 800 + y + i
    
    s1 = t!vbp - t!rab
    s1 = Format(s1, "standard"): l1 = printer.TextWidth(s1)
    ispisxy "Iznos netto", 8000, 1200 + y + i
-   ispisxy s1, 11250 + x - l1, 1200 + y + i
+   ispisxy s1, 11000 + x - l1, 1200 + y + i
    
    s1 = Format(t!pdv, "standard"): l1 = printer.TextWidth(s1)
    ispisxy "Iznos PDV-a", 8000, 1600 + y + i
-   ispisxy s1, 11250 + x - l1, 1600 + y + i
+   ispisxy s1, 11000 + x - l1, 1600 + y + i
   
+   ispisxy "_____________________________________________________________________________________", 1400 + x, 1800 + y + i
+
+
    font 12, -1, 0
    s1 = Format(t!vsp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy "Ukupno", 8000, 2000 + y + i
-   ispisxy s1, 11250 + x - l1, 2000 + y + i: printer.FontBold = False
+   ispisxy "Ukupno", 8000, 2200 + y + i
+   ispisxy s1 & " EUR", 11000 + x - l1, 2200 + y + i: printer.FontBold = False
 
+   
+   ' obraèun kune
+  ' font 10, 0, 0
+  ' s1 = Format(t!vsp * 7.5345, "standard"): l1 = printer.TextWidth(s1)
+ ' ispisxy "Fiksni teèaj konverzije 1 EUR = 7,53450 kn", 1400 + x, 2800 + y + i
+  ' ispisxy "Ukupno u kunama", 8000, 2800 + y + i
+ '  ispisxy s1 & " kn", 11000 + x - l1, 2800 + y + i: printer.FontBold = False
+
+ '  ispisxy "___________________________________________________________________________________", 1400 + x, 3000 + y + i
+
+   
+   
+   
+   
    'Dim t2 As table
    'Set t2 = b.OpenTable("Porezi")
    't2.Index = "PrimaryKey"
@@ -241,10 +277,10 @@ Loop
  End If
 
  If uk(3) <> 0 Then
-   p(3) = uk(3) * .1
+   p(3) = uk(3) * .13
    s1 = Format(uk(3), "standard"): l1 = printer.TextWidth(s1)
    s2 = Format(p(3), "standard"): l1 = printer.TextWidth(s1)
-   ispisxy "osnovica 10% = " & s1 & " , PDV 10% = " & s2, 1400 + x, 1200 + y + i
+   ispisxy "osnovica 13% = " & s1 & " , PDV 13% = " & s2, 1400 + x, 1200 + y + i
  End If
 
  If uk(4) <> 0 Then
@@ -252,12 +288,13 @@ Loop
   ispisxy "osnovica 0% = " & s1, 1400 + x, 1500 + y + i
  End If
 
-     
-   font 11, 0, 0
-   ispisxy TextPozivNaBroj(broj), 1400 + x, 2000 + y + i
-   
-   font 12, 0, 0
-   ispisxy "Potpis:", 7000, 2800 + y + i
+font 11, 0, 0
+
+'ne ispisuje se na ponudi
+  ispisxy TextPozivNaBroj(broj), 1400 + x, 2200 + y + i
+  font 12, 0, 0
+  ispisxy "Oznaka operatera: 1", 7000, 3400 + y + i
+   ispisxy "Potpis:", 7000, 3800 + y + i
 
 
 
@@ -321,34 +358,50 @@ printer.EndDoc
 'Unload postavke
 mp 11
 'izaberi font
-printer.FontName = "Times New Roman CE"
-font 12, 0, 0
+printer.FontName = "Arial CE"
+font 11, 0, 0
 On Error Resume Next
 'podaci o kupcu
-ispisxy ds(t1!naziv_1), 2100 + x, 50 + y
-ispisxy ds(t1!naziv_2), 2100 + x, 350 + y
-ispisxy ds(t1!adresa), 2100 + x, 780 + y
-ispisxy ds(t1!mjesto), 2100 + x, 1150 + y
-'porezni broj
-  ispisxy ds(t1!por_br), 2100 + x, 2100 + y
-   'ispisxy "JMBG:1907942302826", 8300 + x, 5250 + y  izbaèeno
+ispisxy ds(t1!naziv_1), 1500 + x, 800 + y
+ispisxy ds(t1!naziv_2), 1500 + x, 1100 + y
+ispisxy ds(t1!adresa), 1500 + x, 1400 + y
+ispisxy ds(t1!mjesto), 1500 + x, 1700 + y
 
-'radni nalog
-'If rn Then
- '  font 14, -1, -1
-  ' ispisxy "Radni nalog", 8950 + x, 3100 + y
-'End If
+If (t1!por_br) <> 0 Then
+ispisxy ds(t1!por_br), 2000 + x, 2150 + y
+End If
+
+'ispis br. narudžbe
+If (t!broj_narudzbenice) <> "" Then
+ispisxy "Broj narudžbenice:  " & (t!broj_narudzbenice), 1800 + x, 1900 + y
+End If
+
+font 10, 0, 0
+ispisxy "Datumi isporuke:", 5500 + x, 1800 + y
+ispisxy "31. 12. " & Format(t!datum, "yyyy.") & "", 5500 + x, 2050 + y
+' ispisxy Format(t!datum, "yyyy.") & "", 6500 + x, 1200 + y
+ispisxy "Valuta plaæanja:", 5500 + x, 2350 + y
+ispisxy Format(t!datum + 15, "dd. mm. yyyy."), 5500 + x, 2600 + y
+' ispisxy Format(t!datum + 15, "dd. mm. yyyy.") & "", 6500 + x, 2100 + y
+
+
+'ispisxy "Datum i vrijeme izdavanja raèuna:", 4500 + x, 2100 + y
+'ispisxy "Vinkovci " & Format(t!datum, "dd. mm. yyyy. u hh:mm") & "", 4500 + x, 2350 + y
+ispisxy Format(t!datum, "dd. mm. yyyy. u hh:mm") & "", 7800 + x, 3400 + y
+
+'broj raèuna,
 font 18, -1, 0
-
-'broj raèuna,datum,valuta
 Dim broj As String
 broj = (t!br_racun) & TextporedBrojaRacuna()
-ispisxy broj, 3600 - printer.TextWidth((t!br_racun)) / 2 + x, 2650 + y
-font 12, 0, 0
-ispisxy Format(t!datum, "dd.mm.yyyy. hh:mm") & "", 6100 + x, 2750 + y
-ispisxy "31.12.2012.", 9650 + x, 2750 + y
+ispisxy broj, 3750 - printer.TextWidth((t!br_racun)) / 2 + x, 2750 + y
 
+
+
+font 12, 0, 0
+'ispisxy "raèun za primljeni avans     Naèina plaæanja: virmanski nalog", 5000 + x, 2750 + y
+'ispisxy "Naèina plaæanja: virmanski nalog transakcijski raèun", 5000 + x, 2800 + y
 Dim s As snapshot, i As Integer
+
 'ispsi robe
 Set s = b.CreateSnapshot("select * from prodroba where br_racun=" & br)
 Dim s1$, s2$, l1&
@@ -360,27 +413,27 @@ ReDim p(1 To 3)
 
 Do Until s.EOF
    font 11, 0, 0
-   ispisxy (s!nazivrobe), 800 + x, 4000 + y + i
-   ispisxy (s!jed_mjere), 4400 + x, 4000 + y + i
+   ispisxy (s!nazivrobe), 800 + x, 4600 + y + i
+   ispisxy (s!jed_mjere), 4400 + x, 4600 + y + i
    s1 = Format(s!kolicina, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 5700 + x - l1, 4000 + y + i
+   ispisxy s1, 5700 + x - l1, 4600 + y + i
    s1 = Format(s!cbp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 6900 + x - l1, 4000 + y + i
+   ispisxy s1, 6800 + x - l1, 4600 + y + i
    s1 = Format(s!vbp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 8100 + x - l1, 4000 + y + i
+   ispisxy s1, 7900 + x - l1, 4600 + y + i
    pdv = Format(s!pdvp, "standard"):
-   ispisxy pdv & "%", 8400 + x, 4000 + y + i
+   ispisxy pdv & "%", 8250 + x, 4600 + y + i
    s1 = Format(s!pdvi, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 9800 + x - l1, 4000 + y + i
-   font 12, -1, 0
+   ispisxy s1, 9550 + x - l1, 4600 + y + i
+   font 11, -1, 0
    s1 = Format(s!vsp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 11100 + x - l1, 4000 + y + i
+   ispisxy s1, 10800 + x - l1, 4600 + y + i
 
 
     If s!pdvp = 25 Then
         uk(1) = uk(1) + s!vbp
         End If
-    If s!pdvp = 10 Then
+    If s!pdvp = 13 Then
         uk(2) = uk(2) + s!vbp
        End If
     If s!pdvp = 0 Then
@@ -396,41 +449,48 @@ Loop
 'If t!rabi > 0 Then
 '   font 12, 0, 0
 '   ispisxy "- " & Format(t!rabp, "Standard") & "% rabata", 6750 + x, 10850 + y
-'   font 14, 0, 0
+'   font 13, 0, 0
 '   ispisxy Format(t!rabi, "Standard"), 9650 + x + 1700 - printer.TextWidth(Format(t!rabi, "standard")), 10850 + y
 'End If
 
 'TOTALI
-   font 14, 0, 0
+   font 11, 0, 0
    s1 = Format(t!vbp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 8150 + x - l1, 9100 + y
+   ispisxy s1, 7900 + x - l1, 6150 + y
    s1 = Format(t!pdv, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 9800 + x - l1, 9100 + y
-   font 14, -1, 0
+   ispisxy s1, 9500 + x - l1, 6150 + y
+   font 13, -1, 0
    s1 = Format(t!vsp, "standard"): l1 = printer.TextWidth(s1)
-   ispisxy s1, 11100 + x - l1, 9100 + y: printer.FontBold = False
+   ispisxy s1, 10800 + x - l1, 6150 + y: printer.FontBold = False
+
+   font 12, 0, 0
+   s1 = Format(t!vsp * 7.5345, "standard"): l1 = printer.TextWidth(s1)
+   ispisxy s1, 10800 + x - l1, 6800 + y
+
+
+
 
  font 10, 0, 0
  If uk(1) <> 0 Then
    p(1) = uk(1) * .25
    s1 = Format(uk(1), "standard"): l1 = printer.TextWidth(s1)
    s2 = Format(p(1), "standard"): l1 = printer.TextWidth(s1)
-   ispisxy "osnovica 25% = " & s1 & " , PDV 25% = " & s2, 800 + x, 10000
+   ispisxy "osnovica 25% = " & s1 & " , PDV 25% = " & s2, 800 + x, 6100
  End If
 
  If uk(2) <> 0 Then
-   p(2) = uk(2) * .1
+   p(2) = uk(2) * .13
    s1 = Format(uk(2), "standard"): l1 = printer.TextWidth(s1)
    s2 = Format(p(2), "standard"): l1 = printer.TextWidth(s1)
-   ispisxy "osnovica 10% = " & s1 & " , PDV 10% = " & s2, 800 + x, 10300
+   ispisxy "osnovica 13% = " & s1 & " , PDV 13% = " & s2, 800 + x, 6350
  End If
 
  If uk(3) <> 0 Then
    s1 = Format(uk(3), "standard"): l1 = printer.TextWidth(s1)
-  ispisxy "osnovica 0% = " & s1, 800 + x, 10600
+  ispisxy "osnovica 0% = " & s1, 800 + x, 6600
  End If
 
-
+ ispisxy "Oznaka operatera: 1", 800 + x, 7500
 
 
    'Dim t2 As table

@@ -38,9 +38,9 @@ U_UNI_ED.FRM
 ZIP.FRM
 KNJIGA.FRM
 P_ULROBA.FRM
-ProjWinSize=99,700,242,488
-ProjWinShow=2
+ProjWinSize=125,645,242,488
+ProjWinShow=0
 IconForm="FRM_MDI"
 Title="Raèuni"
-ExeName="CASOPIS3.EXE"
+ExeName="CAS2023.EXE"
 Path="..\CASOPIS"
